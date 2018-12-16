@@ -1,0 +1,69 @@
+<!--index.wxml-->
+<view class="container" style='height:{{windowHeight}}px;' catchtouchmove="preventTouchMove" wx:if="{{contentShow}}">
+  <view class="swiper-box">
+    <swiper class='swiper-main' circular="true" interval="3000" autoplay="true" duration="300" previous-margin="58rpx" next-margin="58rpx" bindchange="bindchange" bindanimationfinish="autoplay" style="width:{{windowWidth}}px;height:{{windowWidth*0.84*1.25+10}}px;"> 
+      <block wx:for="{{commodityList}}" wx:key="{{index}}">
+        <swiper-item>
+          <view class="slide-view {{swiperIndex == index ? 'active' : 'quiet'}}" style='background:red;' mode='aspectFill' style='width:{{windowWidth*0.84}}px;height:{{windowWidth*0.84*1.27}}px;background-color:#333;margin:0 auto;'>
+            <image src='{{item.imagePathURL}}' bindtap="gotoDetail" data-commodity-no="{{item.commodityNo}}" data-goods-no="{{item.goodsNo}}"></image>
+            <view class="content-box">
+              <view class="con-left">
+                <view class="con-title">{{item.title}}</view>
+                <view class="con-price">
+                  <text class="m">￥{{item.price}}</text>
+                  <text class="t">￥{{item.tagPrice}}</text>
+                </view>
+              </view>
+              <view class="con-right">
+                <image src='/images/index_cart.png'></image>
+              </view>
+            </view>
+          </view>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+
+  <view class="indicator">
+    <view style='margin:0 auto;'>
+      <image class="{{current == index?'img-selected':'img'}}" src="/images/{{current == index?'indicator_selected':'indicator'}}.png" wx:for="{{commodityList}}" wx:key="{{index}}"></image>
+    </view>
+  </view>
+
+  <view class="btn-box">
+    <view class="btn-item">
+      <image src='/images/index-scan.png' bindtap='scanCode'></image>
+    </view>
+    <view class="btn-item">
+      <image src='/images/index-main.png' bindtap='gotoMain'></image>
+    </view>
+    <view class="btn-item service-btn">
+      <image src='/images/index_service.png'></image>
+      <button open-type="contact" session-from="weapp"></button>
+    </view>
+  </view>
+
+</view>
+
+<!-- 授权获取用户信息 -->
+<view class="login-box {{loginBoxShow? 'login-box-show' : ''}}">
+  <view class="body">
+    <view class="logo">
+      <image src='/images/login_icon.png'></image>
+    </view>
+
+    <button class="go-btn {{checked?'btn-used':''}}" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo" wx:if="{{checked}}">开启体验</button>
+    <view class="go-btn {{checked?'btn-used':''}}" wx:else>开启体验</view>
+    <view class="desc-box">
+      <view class="check-box" bindtap='changeBox'>
+        <image class="uncheck" src='/images/agree_icon.png'></image>
+        <image class="checked" src='/images/agree_icon_ed.png' wx:if="{{checked}}"></image>
+      </view>
+      <view class="desc-t">已阅读并同意</view>
+      <view class="desc-c">《用户服务协议》</view>
+    </view>
+    
+  </view>
+</view>
+
+<i-toast id="toast" />

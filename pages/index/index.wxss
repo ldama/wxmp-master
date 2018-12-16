@@ -1,0 +1,268 @@
+/**index.wxss**/
+.container{
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  position: absolute; 
+  left: 0; 
+  top:0;
+  bottom: 0; 
+  right: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.swiper-box{
+  width: 100%;
+  flex: 3.8;
+}
+
+.swiper-main{
+  width: 100%;
+  height: 92%;
+  margin-top: 50rpx;
+}
+
+.swiper-main .wx-swiper-dots.wx-swiper-dots-horizontal{
+     margin-bottom: 2rpx;
+}
+
+.swiper-main .wx-swiper-dot{
+    width: 30rpx;
+    display: inline-flex;
+    height: 4rpx;
+    /* margin-left: 2rpx; */
+    justify-content:space-between;
+}
+
+.swiper-main .wx-swiper-dot::before{
+    content: '';
+    flex-grow: 1; 
+    background: #E5E5E5;
+    border-radius: 8rpx
+}
+
+.swiper-main .wx-swiper-dot-active::before{
+    background:#30C79F;   
+}
+
+.slide-view {
+  width: 100%;
+  border-radius: 10rpx;
+  position: relative;
+  overflow: hidden;
+}
+
+.slide-view image{
+  width: 100%;
+  height: 100%;
+}
+
+.content-box{
+  width: 100%;
+  height: 130rpx;
+  background: linear-gradient(-180deg, rgba(0,0,0,0.00) 0%, rgba(0,0,0,0.60) 100%);
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  flex-direction: row;
+  z-index: 999;
+}
+
+.content-box .con-left{
+  flex: 4;
+  display: flex;
+  flex-direction: column;
+  padding-left: 24rpx;
+}
+
+.content-box .con-left .con-title{
+  color: #fff;
+  font-size: 32rpx;
+  line-height: 54rpx;
+  margin-top: 20rpx;
+}
+
+.content-box .con-left .con-price{
+  display: flex;
+  flex-direction: row;
+}
+
+.content-box .con-left .con-price .m{
+  color: #fff;
+  font-size: 28rpx;
+  margin-right: 10rpx;
+  font-family: PingFangSC-Medium;
+  letter-spacing: 0;
+}
+
+.content-box .con-left .con-price .t{
+  color: rgba(255,255,255,0.40);
+  font-size: 24rpx;
+  line-height: 46rpx;
+  text-decoration: line-through;
+}
+
+.content-box .con-right{
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.content-box .con-right image{
+  width: 70rpx;
+  height: 70rpx;
+  margin-left: 20rpx;
+}
+
+view.quiet {
+  transform: scale(0.95);
+  transition: all 0.2s ease-in 0s;
+}
+
+view.active {
+  transform: none;
+  transition: all 0.2s ease-in 0s;
+} 
+
+.indicator{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  flex: 0.3;
+}
+
+.indicator .img-selected{
+  width: 36rpx;
+  height: 12rpx;
+}
+
+.indicator .img{
+  width: 19.2rpx;
+  height: 12rpx;
+}
+
+.btn-box{
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  margin-top: 28rpx;
+  flex: 1.1;
+}
+
+.btn-item{
+  flex: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.btn-item image{
+  width: 120rpx;
+  height: 120rpx;
+}
+
+.service-btn{
+  position: relative;
+}
+
+.service-btn button{
+  width: 140rpx;
+  height: 120rpx;
+  position: absolute;
+  top: 0;
+  background-color: rgba(255, 255, 255, 0);
+  border: 0px;
+  padding: 0;
+  margin: 0;
+}
+
+button::after {
+  border: none;
+  border-color: transparent;
+}
+
+/* 用户授权获取信息 */
+.login-box{
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  display: none;
+}
+
+.login-box-show{
+  display: block;
+}
+
+.body{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.body image{
+  width: 290rpx;
+  height: 120rpx;
+}
+
+.logo{
+  margin-top: 240rpx;
+}
+
+.go-btn{
+  width: 60%;
+  background-color: #999;
+  border-radius: 6rpx;
+  text-align: center;
+  font-family: PingFangSC-Medium;
+  font-size: 32rpx;
+  color: #FFFFFF;
+  letter-spacing: 0;
+  line-height: 80rpx;
+  margin-top: 190rpx;
+}
+
+.btn-used{
+  background-color: #00765B;
+}
+
+.desc-box{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 450rpx;
+}
+
+.desc-box image{
+  width: 38rpx;
+  height: 38rpx;
+}
+
+.desc-box .desc-t{
+  font-size: 30rpx;
+  color: #999;
+}
+
+.desc-box .desc-c{
+  font-size: 30rpx;
+  color: #4A90E2;
+}
+
+.check-box{
+  position: relative;
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.checked{
+  position: absolute;
+  top: 2rpx;
+  left: 0;
+}

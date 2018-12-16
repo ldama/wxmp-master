@@ -1,0 +1,36 @@
+/**app.wxss**/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} 
+
+/**水平排布，并居中*/
+.row-center{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+/**垂直排布，并居中*/
+.col-center{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/**水平排布*/
+.row{
+  display: flex;
+  flex-direction: row;
+}
+
+/**垂直排布*/
+.column{
+  display: flex;
+  flex-direction: column;
+}
